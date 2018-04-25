@@ -40,6 +40,13 @@ class BranchController extends Controller
         request()->validate([
             'name' => 'required',
             'location' => 'required',
+            'registration_date' => 'required',
+            'license_number' => 'required',
+            'branch_owner' => 'required',
+            'contact_number' => 'required',
+            'email_address' => 'required',
+            'facebook_link' => 'required',
+            'photo' => 'required',
         ]);
         Branch::create($request->all());
         return redirect()->route('branches.index')
@@ -82,6 +89,13 @@ class BranchController extends Controller
         request()->validate([
             'name' => 'required',
             'location' => 'required',
+            'registration_date' => 'required',
+            'license_number' => 'required',
+            'branch_owner' => 'required',
+            'contact_number' => 'required',
+            'email_address' => 'required',
+            'facebook_link' => 'required',
+            'photo' => 'required',
         ]);
         Branch::find($id)->update($request->all());
         return redirect()->route('branches.index')

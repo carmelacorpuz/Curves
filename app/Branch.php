@@ -12,6 +12,6 @@ class Branch extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'location'
+        'name', 'location', 'registration_date', 'license_number', 'branch_owner', 'contact_number', 'email_address', 'facebook_link', 'photo',
     ];
 }

@@ -8,10 +8,6 @@
         </div>
     @endif
     
-    <div class="row">
-        <a href="{{url('/admin/addbranch')}}" class="btn btn-success">Add Branch</a>
-        <a href="{{url('/admin/branches')}}" class="btn btn-default">Branches</a>
-    </div>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
@@ -26,5 +27,12 @@
                 {{ $branch->location}}
             </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Email Address:</strong>
+                {{ $branch->email_address}}
+            </div>
+        </div>
     </div>
+
 @endsection

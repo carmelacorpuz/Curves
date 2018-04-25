@@ -1,15 +1,19 @@
 @extends('layouts.app')
 
-
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Add Branch</h2>
+                <h2>NEW BRANCH</h2>
             </div>
-            <div class="pull-right">
+
+    {!! Form::open(array('route' => 'branches.store','method'=>'POST')) !!}
+         @include('branches.form')
+    {!! Form::close() !!}
+
+            <!-- <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('branches.index') }}"> Back</a>
-            </div>
+            </div> -->
         </div>
     </div>
 
@@ -24,11 +28,4 @@
             </ul>
         </div>
     @endif
-
-
-    {!! Form::open(array('route' => 'branches.store','method'=>'POST')) !!}
-         @include('branches.form')
-    {!! Form::close() !!}
-
-
 @endsection
