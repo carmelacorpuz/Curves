@@ -15,15 +15,15 @@ class CreateBranchesTable extends Migration
     {
         Schema::create('branches', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('name',60);
-            $table->text('location',255);
-            $table->text('registration_date');
-            $table->text('license_number',7);
-            $table->text('branch_owner',100);
-            $table->text('contact_number',7);
-            $table->text('email_address',255);
-            $table->text('facebook_link',255);
-            $table->text('photo',255);
+            $table->string('name',60);
+            $table->string('location',255);
+            $table->date('registration_date');
+            $table->string('license_number',7);
+            $table->string('branch_owner',100);
+            $table->string('contact_number',7);
+            $table->string('email_address',255);
+            $table->string('facebook_link',255)->nullable();
+            $table->text('photo',255)->nullable();
             $table->timestamps();
         });
     }

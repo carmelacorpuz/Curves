@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
-use App\Branch;
+use App\Employee;
 
-class BranchController extends Controller
+class EmployeeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,8 @@ class BranchController extends Controller
      */
     public function index()
     {
-        $branches = Branch::latest()->paginate(5);
-        return view('branches.index',compact('branches'))
+        $employees = Employee::latest()->paginate(5);
+        return view('employees.index',compact('employees'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -26,7 +27,7 @@ class BranchController extends Controller
      */
     public function create()
     {
-        return view('branches.create');
+        return view('employees.create');
     }
 
     /**
@@ -39,18 +40,11 @@ class BranchController extends Controller
     {
         request()->validate([
             'name' => 'required',
-            'location' => 'required',
-            'registration_date' => 'required',
-            'license_number' => 'required',
-            'branch_owner' => 'required',
-            'contact_number' => 'required',
             'email_address' => 'required',
-            'facebook_link' => 'required',
-            'photo' => 'required',
         ]);
-        Branch::create($request->all());
-        return redirect()->route('branches.index')
-                        ->with('success','Branch successfully added.');
+        Employee::create($request->all());
+        return redirect()->route('employees.index')
+                        ->with('success','Employee successfully added.');
     }
 
     /**
@@ -61,8 +55,8 @@ class BranchController extends Controller
      */
     public function show($id)
     {
-        $branch = Branch::find($id);
-        return view('branches.show',compact('branch'));
+        $employee = Employee::find($id);
+        return view('employees.show',compact('employee'));
     }
 
     /**
@@ -73,8 +67,8 @@ class BranchController extends Controller
      */
     public function edit($id)
     {
-        $branch = Branch::find($id);
-        return view('branches.edit',compact('branch'));
+        $employee = Employee::find($id);
+        return view('employees.edit',compact('employee'));
     }
 
     /**
@@ -88,18 +82,11 @@ class BranchController extends Controller
     {
         request()->validate([
             'name' => 'required',
-            'location' => 'required',
-            'registration_date' => 'required',
-            'license_number' => 'required',
-            'branch_owner' => 'required',
-            'contact_number' => 'required',
             'email_address' => 'required',
-            'facebook_link' => 'required',
-            'photo' => 'required',
         ]);
-        Branch::find($id)->update($request->all());
-        return redirect()->route('branches.index')
-                        ->with('success','Branch successfully updated.');
+        Employee::find($id)->update($request->all());
+        return redirect()->route('employees.index')
+                        ->with('success','Employee information successfully updated.');
     }
 
     /**
@@ -110,8 +97,8 @@ class BranchController extends Controller
      */
     public function destroy($id)
     {
-        Branch::find($id)->delete();
-        return redirect()->route('branches.index')
-                        ->with('success','Branch has been removed.');
+        Employee::find($id)->delete();
+        return redirect()->route('employees.index')
+                        ->with('success','Employee instance has been removed.');
     }
 }
