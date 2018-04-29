@@ -27,6 +27,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/logout','Auth\AdminLoginController@logout')->name('admin.logout');
     Route::resource('/branches','BranchController');
     Route::resource('/employees','EmployeeController');
+    Route::resource('/members','MemberController');
  
     //admin password reset routes
     Route::post('/password/email','Auth\AdminForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
