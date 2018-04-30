@@ -41,7 +41,7 @@ class MemberController extends Controller
         request()->validate([
             'name' => 'required',
             'email_address' => 'required',
-            'keytag_id' => 'requred',
+            'keytag_id' => 'required',
             'age' => 'required',
             'nickname' => 'required',
             'first_name' => 'required',
@@ -96,7 +96,7 @@ class MemberController extends Controller
         request()->validate([
             'name' => 'required',
             'email_address' => 'required',
-            'keytag_id' => 'requred',
+            'keytag_id' => 'required',
             'age' => 'required',
             'nickname' => 'required',
             'first_name' => 'required',
