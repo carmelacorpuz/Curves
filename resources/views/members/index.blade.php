@@ -23,15 +23,15 @@
     <table class="table table-bordered">
         <tr>
             <th>No</th>
-            <th>Name</th>
+            <th>First Name</th>
             <th>Email Address</th>
             <th width="280px">Action</th>
         </tr>
     @foreach ($members as $member)
     <tr>
         <td>{{ ++$i }}</td>
-        <td>{{ $member->name}}</td>
-        <td>{{ $member->location}}</td>
+        <td>{{ $member->first_name}}</td>
+        <td>{{ $member->email_address}}</td>
         <td>
             <a class="btn btn-info" href="{{ route('members.show',$member->id) }}">Show</a>
             <a class="btn btn-primary" href="{{ route('members.edit',$member->id) }}">Edit</a>

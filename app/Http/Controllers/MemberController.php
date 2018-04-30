@@ -39,12 +39,11 @@ class MemberController extends Controller
     public function store(Request $request)
     {
         request()->validate([
-            'name' => 'required',
+            'first_name' => 'required',
             'email_address' => 'required',
             'keytag_id' => 'required',
             'age' => 'required',
             'nickname' => 'required',
-            'first_name' => 'required',
             'middle_initial' => 'required',
             'last_name' => 'required',
             'birthdate' => 'required',
@@ -53,11 +52,10 @@ class MemberController extends Controller
             'landline' => 'required',
             'occupation' => 'required',
             'mobile_number' => 'required',
-            'timestamp' => 'required',
         ]);
         Member::create($request->all());
         return redirect()->route('members.index')
-                        ->with('success','Member successfully added.');   
+                        ->with('success','Member successfully added.');  
     }
 
     /**
@@ -94,12 +92,11 @@ class MemberController extends Controller
     public function update(Request $request, $id)
     {
         request()->validate([
-            'name' => 'required',
+            'first_name' => 'required',
             'email_address' => 'required',
             'keytag_id' => 'required',
             'age' => 'required',
             'nickname' => 'required',
-            'first_name' => 'required',
             'middle_initial' => 'required',
             'last_name' => 'required',
             'birthdate' => 'required',
@@ -108,7 +105,6 @@ class MemberController extends Controller
             'landline' => 'required',
             'occupation' => 'required',
             'mobile_number' => 'required',
-            'timestamp' => 'required',
         ]);
         Member::find($id)->update($member->all());
         return redirect()->route('members.index')

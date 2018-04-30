@@ -31,7 +31,7 @@
     <tr>
         <td>{{ ++$i }}</td>
         <td>{{ $employee->name}}</td>
-        <td>{{ $employee->location}}</td>
+        <td>{{ $employee->email_address}}</td>
         <td>
             <a class="btn btn-info" href="{{ route('employees.show',$employee->id) }}">Show</a>
             <a class="btn btn-primary" href="{{ route('employees.edit',$employee->id) }}">Edit</a>
