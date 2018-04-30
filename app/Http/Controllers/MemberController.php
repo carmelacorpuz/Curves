@@ -41,8 +41,21 @@ class MemberController extends Controller
         request()->validate([
             'name' => 'required',
             'email_address' => 'required',
+            'keytag_id' => 'requred',
+            'age' => 'required',
+            'nickname' => 'required',
+            'first_name' => 'required',
+            'middle_initial' => 'required',
+            'last_name' => 'required',
+            'birthdate' => 'required',
+            'address' => 'required',
+            'marital_status' => 'required',
+            'landline' => 'required',
+            'occupation' => 'required',
+            'mobile_number' => 'required',
+            'timestamp' => 'required',
         ]);
-        Employee::create($request->all());
+        Member::create($request->all());
         return redirect()->route('members.index')
                         ->with('success','Member successfully added.');   
     }
@@ -83,6 +96,19 @@ class MemberController extends Controller
         request()->validate([
             'name' => 'required',
             'email_address' => 'required',
+            'keytag_id' => 'requred',
+            'age' => 'required',
+            'nickname' => 'required',
+            'first_name' => 'required',
+            'middle_initial' => 'required',
+            'last_name' => 'required',
+            'birthdate' => 'required',
+            'address' => 'required',
+            'marital_status' => 'required',
+            'landline' => 'required',
+            'occupation' => 'required',
+            'mobile_number' => 'required',
+            'timestamp' => 'required',
         ]);
         Member::find($id)->update($member->all());
         return redirect()->route('members.index')
