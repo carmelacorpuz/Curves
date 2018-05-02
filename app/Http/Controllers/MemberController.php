@@ -38,6 +38,8 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
+
         request()->validate([
             'first_name' => 'required',
             'email_address' => 'required',

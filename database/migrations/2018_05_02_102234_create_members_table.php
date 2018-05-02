@@ -26,7 +26,7 @@ class CreateMembersTable extends Migration
             $table->string('marital_status',20);
             $table->integer('landline');
             $table->string('occupation',255);
-            $table->integer('mobile_number');
+            $table->string('mobile_number');
             $table->string('email_address',255);
             $table->timestamps();
         });

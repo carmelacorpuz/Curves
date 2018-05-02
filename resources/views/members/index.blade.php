@@ -29,7 +29,7 @@
         </tr>
     @foreach ($members as $member)
     <tr>
-        <td>{{ ++$i }}</td>
+        <td>{{ $member->keytag_id }}</td>
         <td>{{ $member->first_name}}</td>
         <td>{{ $member->email_address}}</td>
         <td>
